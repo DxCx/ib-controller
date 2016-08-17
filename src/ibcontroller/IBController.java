@@ -547,7 +547,7 @@ public class IBController {
         }
 
         int portNumber = Settings.settings().getInt("ForceTwsApiPort", 0);
-        boolean readOnlyApi = Settings.settings().getBoolean("ReadOnlyAPI", false);
+        boolean readOnlyApi = Settings.settings().getBoolean("ReadOnlyAPI", true);
         MyCachedThreadPool.getInstance().execute(new ConfigureApiSettingTask(isGateway, portNumber, readOnlyApi));
 
         Utils.sendConsoleOutputToTwsLog(!Settings.settings().getBoolean("LogToConsole", false));
